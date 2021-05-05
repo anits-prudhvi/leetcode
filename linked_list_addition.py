@@ -19,10 +19,12 @@ def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
             r.next = ListNode((int(l1.val)+c)%10,None)
             r = r.next
             c = int((l1.val + c) / 10)
+            l1 = l1.next
         while l2 != None:
             r.next = ListNode((int(l2.val)+c)%10,None)
             r = r.next
             c = int((l2.val + c) / 10)
+            l2 = l2.next
         if c != 0:
             r.next = ListNode(int(c),None)
         return main_head
